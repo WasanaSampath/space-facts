@@ -1,25 +1,11 @@
-// script.js
-const facts = [
-    "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old!",
-    "A day on Venus is longer than its year. It takes Venus 243 Earth days to rotate on its axis!",
-    "Bananas are berries, but strawberries aren't!",
-    "The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after just 38 minutes!",
-    "Cows have best friends and get stressed when separated from them!"
-];
-
-function generateFact() {
-    const factDisplay = document.getElementById('factDisplay');
-    const randomFact = facts[Math.floor(Math.random() * facts.length)];
-    factDisplay.textContent = randomFact;
-}
-
-function shareFact(platform) {
-    const fact = document.getElementById('factDisplay').textContent;
-    const encodedFact = encodeURIComponent(fact);
-    
-    if (platform === 'twitter') {
-        window.open(`https://twitter.com/intent/tweet?text=${encodedFact}`, '_blank');
-    } else if (platform === 'facebook') {
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}&quote=${encodedFact}`, '_blank');
-    }
-}
+const programmingFacts = [
+    "The first programmer was Ada Lovelace, who created an algorithm for Charles Babbage's early mechanical computer in the 1840s.",
+    "The first computer virus was called 'Creeper' and was created in 1971 as an experiment.",
+    "The first high-level programming language was Fortran, developed in 1957 by IBM.",
+    "Python, one of the most popular languages today, was named after the comedy series 'Monty Python's Flying Circus.'",
+    "The first website is still online and can be visited at info.cern.ch.",
+    "The term 'bug' in programming was popularized when a real moth caused issues in a computer in 1947.",
+    "JavaScript was created in just 10 days by Brendan Eich in 1995.",
+    "The 'Hello, World!' program was first popularized in the 1978 book 'The C Programming Language.'",
+    "GitHub is the largest host of source code globally, with millions of repositories!",
+    "SpaceX used C++ and Python to program the software
