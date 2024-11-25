@@ -1,59 +1,72 @@
-/* styles.css */
 :root {
-  --primary-color: #9b59b6;
-  --secondary-color: #71b7e6;
-  --bg-light: #f8f9fa;
-  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --primary-color: #4caf50; /* Green */
+  --secondary-color: #2196f3; /* Blue */
+  --bg-light: #ffffff; /* White */
+  --bg-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  --text-color: #333;
+  --shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   --transition: all 0.3s ease-in-out;
   --border-radius: 1rem;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  min-height: 100dvh; /* Modern viewport height */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-  display: grid;
-  place-items: center; /* Modern centering technique */
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
+  color: var(--text-color);
 }
 
 .container {
-  background: white;
-  padding: clamp(1rem, 5vw, 2rem);
+  background: var(--bg-light);
+  padding: 2rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   text-align: center;
-  width: min(90%, 500px); /* Modern responsive width */
-  backdrop-filter: blur(10px);
-  animation: fadeIn 0.3s ease-out;
+  max-width: 400px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-out;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 .fact-box {
-  margin: 1.25rem 0;
-  padding: 1.25rem;
-  background: var(--bg-light);
-  border-radius: calc(var(--border-radius) / 2);
-  min-height: 100px;
-  display: grid;
-  place-items: center;
+  background: #f1f1f1;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-color);
 }
 
 button {
   background: var(--primary-color);
-  color: white;
+  color: #fff;
   border: none;
   padding: 0.75rem 1.25rem;
-  border-radius: calc(var(--border-radius) / 2);
+  border-radius: var(--border-radius);
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 500;
   transition: var(--transition);
+  box-shadow: var(--shadow);
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow);
 }
 
 button:active {
@@ -61,10 +74,10 @@ button:active {
 }
 
 .share-buttons {
-  margin-top: 1.25rem;
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 .share-buttons button {
@@ -74,7 +87,7 @@ button:active {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
