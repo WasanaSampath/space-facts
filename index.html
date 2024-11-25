@@ -1,0 +1,24 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Random Fun Facts!</h1>
+        <div class="fact-box" id="factDisplay">
+            Click the button below to get a random fun fact!
+        </div>
+        <button onclick="generateFact()">Generate New Fact</button>
+        <div class="share-buttons">
+            <button onclick="shareFact('twitter')">Share on Twitter</button>
+            <button onclick="shareFact('facebook')">Share on Facebook</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
