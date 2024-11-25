@@ -1,52 +1,92 @@
 /* styles.css */
+:root {
+  --primary-color: #9b59b6;
+  --secondary-color: #71b7e6;
+  --bg-light: #f8f9fa;
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease-in-out;
+  --border-radius: 1rem;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100dvh; /* Modern viewport height */
+  margin: 0;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  display: grid;
+  place-items: center; /* Modern centering technique */
+  padding: 1rem;
 }
 
 .container {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    text-align: center;
-    max-width: 500px;
-    width: 90%;
+  background: white;
+  padding: clamp(1rem, 5vw, 2rem);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  width: min(90%, 500px); /* Modern responsive width */
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.3s ease-out;
 }
 
 .fact-box {
-    margin: 20px 0;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    min-height: 100px;
+  margin: 1.25rem 0;
+  padding: 1.25rem;
+  background: var(--bg-light);
+  border-radius: calc(var(--border-radius) / 2);
+  min-height: 100px;
+  display: grid;
+  place-items: center;
 }
 
 button {
-    background: #9b59b6;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: transform 0.2s;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: calc(var(--border-radius) / 2);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: var(--transition);
 }
 
 button:hover {
-    transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+button:active {
+  transform: translateY(0);
 }
 
 .share-buttons {
-    margin-top: 20px;
+  margin-top: 1.25rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
 }
 
 .share-buttons button {
-    margin: 0 5px;
-    background: #71b7e6;
+  background: var(--secondary-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
